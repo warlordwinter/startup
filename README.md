@@ -13,10 +13,15 @@ Here is my front-end design for my project. A back-end design will be added late
 ![Mock](4.jpg)
 
 ### Key Features
+
 -Secure login over HTTPS
+
 -Ability for the user to upload their own PDFS
+
 -Ability for the User to download their simplified PDF.
+
 -An AI chat box is provided for the user to ask questions.
+
 -Past PDFs of the user are stored in their account.
 
 ### Technologies
