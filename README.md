@@ -1,7 +1,7 @@
 # PDF simplifier
 
 ### Elevator Pitch
-Have you ever had a super long PDF or document that you didn't want to read? What if I told you that there was a website that would read a PDF and make it easier for you to understand and provide an AI assistant for you to ask questions to? This amazing tool is called *pdfsimplifer.click* and it was made for you.
+Have you ever had a super long PDF or document that you didn't want to read? What if I told you that there was a website that would read a PDF and make it easier for you to understand by providing an AI assistant for you to ask questions? This amazing tool is called *pdfsimplifer.click* and it was made for you.
 
 
 ### Design
