@@ -23,21 +23,20 @@ Here is my front end design for my project. A back-end design will be added late
 I will utilize the teachnolodies in the following ways.
 
 -**HTML** HTML Structure is showcased through the structure of the webpage. There will be three webpages. This includes creating the layout for the PDF viewer, user dashboard, and AI chatbox.One will be used for the intro.
-
 -**CSS** Application's styling is used to in chatboxs, screen headers, PDF displayers, dynamic colors. 
 
--**JavaScript** Provides login capability, button connections, and collection of text box information. It will also be used to implement the AI chatbox, handle PDF uploads, and make the user experience smoother.
+**JavaScript** Provides login capability, button connections, and collection of text box information. It will also be used to implement the AI chatbox, handle PDF uploads, and make the user experience smoother.
 
--**Service**
+**Service**
     - Login Enpoints
     - Manage Users data.
     - Retreiving previous PDF
     - Storing and sumbiting PDFs
 
-- **DB** - Will be used to store the User's PDFs and login data.
+**DB** Will be used to store the User's PDFs and login data.
 
-- **Login** -  Registers and logins the user. User credentials are stored in the database.
+**Login** Registers and logins the user. User credentials are stored in the database.
 
-- **WebSocket** - The websocket will be used for real-time communication with the AI assistant.
+**WebSocket** The websocket will be used for real-time communication with the AI assistant.
 
-- **React** - React will help build the PDF viewer, user dashboard, and integrate the AI chatbox.
+**React** React will help build the PDF viewer, user dashboard, and integrate the AI chatbox.
