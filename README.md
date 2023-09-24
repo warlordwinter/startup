@@ -22,7 +22,8 @@ Here is my front end design for my project. A back-end design will be added late
 ### Technologies
 I will utilize the teachnolodies in the following ways.
 
--**HTML** HTML Structure is showcased through the structure of the webpage. There will be three webpages. This includes creating the layout for the PDF viewer, user dashboard, and AI chatbox.One will be used for the intro.
+-**HTML** HTML Structure is showcased through the structure of the webpage. There will be three webpages. This includes creating the layout for the PDF viewer, user dashboard, and AI chatbox. One page will be used for the introduction page. Another page will be fror the User's Dashboard. The last page will be for the Login Page.
+
 -**CSS** Application's styling is used to in chatboxs, screen headers, PDF displayers, dynamic colors. 
 
 **JavaScript** Provides login capability, button connections, and collection of text box information. It will also be used to implement the AI chatbox, handle PDF uploads, and make the user experience smoother.
