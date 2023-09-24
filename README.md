@@ -16,13 +16,13 @@ Here is my front-end design for my project. A back-end design will be added late
 -Secure login over HTTPS
 -Ability for the user to upload their own PDFS
 -Ability for the User to download their simplified PDF.
--An AI chat box is provided for the user to ask questions is created.
--past PDFs of the user are stored in their account.
+-An AI chat box is provided for the user to ask questions.
+-Past PDFs of the user are stored in their account.
 
 ### Technologies
 I will utilize the technologies in the following ways.
 
--**HTML** HTML Structure is showcased through the structure of the webpage. There will be three web pages. This includes creating the layout for the PDF viewer, user dashboard, and AI chatbox. One page will be used for the introduction page. Another page will be for the User's Dashboard. The last page will be for the Login Page.
+-**HTML** HTML Structure is showcased through the structure of the webpage. There will be three web pages. This includes creating the layout for the PDF viewer, user dashboard, and AI chatbox. One page will be used for the introduction page. Another page will be for the User's Dashboard. The last page will be for the Login.
 
 -**CSS** Application's styling is used in chatboxs, screen headers, PDF displayers, and dynamic colors. 
 
@@ -40,4 +40,4 @@ I will utilize the technologies in the following ways.
 
 **WebSocket** The web socket will be used for real-time communication with the AI assistant.
 
-**React** React will help build the PDF viewer, the user dashboard, and integrate the AI chatbox.
+**React** React will help build the PDF viewer, the user dashboard, and the AI chatbox.
