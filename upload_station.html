@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tell browsers not to scale the viewport automatically -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Station</title>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+  <body>
+    <!-- Use header, main, and footer elements to give semantic structure -->
+    <header>
+      <h1>Welcome (user_name) to the Upload Station<sup>&reg;</sup></h1>
+
+      <!-- Navigation elements -->
+      <nav>
+        <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+        <menu>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="upload_station.html">Upload Station</a></li>
+          <li><a href="sign_up.html">Sign Up</a></li>
+        </menu>
+
+        <header>
+          <h3>The User's Interface of Stored PDF's will be here. </h3>
+        </header>
+        <br/>
+
+      </nav>
+
+      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
+      <hr />
+    </header>
+
+    <main>
+      <header>
+        <h3>ChatBox (Link API key here)</h3>
+      </header>
+      <div class ="chat-box">
+        <!--Remember to add a box to help format your chatbox-->
+        <div class = "chat-messages"></div>
+        <!--Find a way to hook of the AI to this via Java Script-->
+          <div class="User_message">
+            <span class="user">User_Name:</span>
+            <span class ="text">Hello There!</span>
+          </div>
+        <div class="AI_messages">
+            <span class="user"> ChatBot: </span>
+            <span class="text"> Hi! What questions do you have about your document?</span>
+          </div>
+          <br/>
+
+        <div class = "chat-input">
+          <input type ="text" placeholder ="Ask Your Questions here">
+          <button>Send</button>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <hr />
+      <header>
+        <h3>My Document</h3>
+        <br/>
+        <body>"The document will be displayed here with the WebSocket"
+        </body>
+      </header>
+      <br/>
+
+      <span class="text-reset">Wiley Welch's</span>
+      <br />
+      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
+    </footer>
+  </body>
+</html>
