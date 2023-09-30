@@ -46,3 +46,15 @@ I will utilize the technologies in the following ways.
 **WebSocket** The web socket will be used for real-time communication with the AI assistant.
 
 **React** React will help build the PDF viewer, the user dashboard, and the AI chatbox.
+
+
+## HTML Deliverable
+
+-**HTML Pages**: There are three main HTML pages. One for the Login and Landing page. One page to sign up and register. The last page is dedicated to the PDF station, chatbot, and user interface.
+-**Links**: On the top of each page there are multiple links to help the user navigate to the next page. Furthermore, on the Login page if the user hits the login button they are navigated to the upload_station portal.
+-**Text**: Much of the AI Chat box is represented by a textual description.
+-**3rd party**: The ChatBox will call an API in the chatbox area. Plus, the User's interface of PDF's will store all of the PDF's through a 3rd party system.
+-**Images**: On the Login page there is a basic login picture.
+-**Login**: There are login and submit buttons for the user to sign up or login.
+-**Database**: The users PDF's are pulled from the database. 
+-**Websocket**: The AI chatbox will need to be connected to the Web so that it can respond in real time.
