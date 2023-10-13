@@ -4,6 +4,12 @@ body {
   min-width: 375px;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+}
+
 header {
   flex: 0 80px;
   background-color: lightcoral;
@@ -32,6 +38,9 @@ h3{
 
 h2{
   font-weight: 100;
+  background-color: #808080;
+  padding: 30px;
+  font-weight: bold;
 }
 
 .dropdown {
