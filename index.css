@@ -12,13 +12,26 @@ header {
   text-align: center; /* Center text in the header */
 }
 
+h3{
+  padding: 10px 10px;
+  background-color: white;
+      
+}
 
 .dropbtn {
   background-color: #808080;
   color: white;
+  font-weight: bold;
   padding: 10px;
-  border: none;
+  border: black;
   cursor: pointer;
+  box-shadow: 0px 2px 4px 6px rgba(0, 0, 0, 0.4);
+  padding-left:60px;
+  padding-right: 60px;
+}
+
+h2{
+  font-weight: 100;
 }
 
 .dropdown {
@@ -31,7 +44,7 @@ header {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -57,12 +70,33 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: #F5EDE3;
+}
+.login-form{
+  text-align: center;
+  background-color: #808080;
+  border-radius: 0cqb;
+  padding: 12px 30px;
+  box-shadow: 0px 3px 3px 0px;
+}
+label{
+    text-emphasis-style: revert;
+    background: border-box;
+    background-color: white;
+    padding: 4px 6px;
 }
 
 footer {
   flex: 0 30px;
+  background-color: #F5EDE3;
 }
-
+.credits{
+  padding: 30px 30px;
+  flex: auto;
+}
+.user{
+  padding-bottom: 10px;
+}
 menu {
   flex: 1;
   display: flex;
@@ -71,9 +105,9 @@ menu {
 
   justify-content: center;
 }
-
 .navbar-brand {
   padding-left: 0.3em;
+  flex-direction: column;
   border-bottom: 1px solid rgb(182, 182, 182); /* Corrected border syntax */
 }
 
