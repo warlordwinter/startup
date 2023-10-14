@@ -51,6 +51,10 @@ main{
     text-decoration: underline;
 }
 
+footer{
+    background-color: #F5EDE3;
+    flex: auto;
+}
 .true-header{
     background-color: lightcoral;
     padding: 10px;
@@ -80,8 +84,8 @@ main{
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  /* box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.2); */
+  /* z-index: 1; */
 }
 .dropdown-content a {
   color: black;

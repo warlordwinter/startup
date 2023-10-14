@@ -58,3 +58,13 @@ I will utilize the technologies in the following ways.
 -**Login**: There are login and submit buttons for the user to sign up or login.
 -**Database**: The users PDF's are pulled from the database. 
 -**Websocket**: The AI chatbox will need to be connected to the Web so that it can respond in real time.
+
+## CSS Deliverable
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body** - All of the headers, footers, and content bodies are custmized to the page they impact.
+- **Navigation elements** - I made a dropdown menu to help ease navigation.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application elements** - Used good contrast of colors and shadow uses.
+- **Application text content** - Consistent fonts and reoccuring color uses suggests great organization.
+- **Application images** - I made my image larger usings CSS.
