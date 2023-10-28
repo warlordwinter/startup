@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simon HTML</title>
     <link rel="icon" href="favicon.ico" />
+
+    <script src="login.js"></script>
+    <link rel="stylesheet" type="test/css" href="index.css"
     
     <!--Here is my CSS-->
     <link rel="stylesheet" type="text/css" href="index.css" />
@@ -49,14 +52,17 @@
       <div class="credits">
         <div class="user">
           <label for="name">Username:</label>
-          <input type="text" id="name" placeholder="Your Username here" required/>
+          <input type="text" id="username" placeholder="Your Username here" required/>
+
         </div>
         <div class="pass">
           <label for="name">Password:</label>
-          <input type="text" id="name" placeholder="Your Password here" required/>
+          <input type="password" id="password" placeholder="Your Password here" required/>
+          <!-- <button class="btn_btn-primary" onclick="login()">Login</button> -->
         </div>
       </div>
-      <button type="submit">Login</button>
+      <button class="btn btn-primary" onclick="login()">Login</button>
+      <!-- <button type="submit">Login</button> -->
       </form>
       <p>
         Don't have an account?

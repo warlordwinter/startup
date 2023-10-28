@@ -23,7 +23,9 @@ h3{
   background-color: white;
       
 }
-
+btn .btn-primary{
+  background-color: #F5EDE3;
+}
 .dropbtn {
   background-color: #808080;
   color: white;
