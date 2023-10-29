@@ -7,10 +7,10 @@ Have you ever had a super long PDF or document that you didn't want to read? Wha
 ### Design
 Here is my front-end design for my project. A back-end design will be added later.
 
-![Mock](1.jpg)
-![Mock](2.jpg)
-![Mock](3.jpg)
-![Mock](4.jpg)
+![Mock](images/1.jpg)
+![Mock](images/2.jpg)
+![Mock](images/3.jpg)
+![Mock](images/4.jpg)
 
 ### Key Features
 
