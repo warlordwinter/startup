@@ -8,13 +8,16 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
   />
-  <script src="scripts/login.js"></script>
   <head>
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Upload Station</title>
     <link rel="icon" href="favicon.ico" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="scripts/upload_station.js" defer></script>
+    <script src="scripts/signup.js"defer></script>
+    <script src="scripts/login.js" defer></script>
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
@@ -24,17 +27,18 @@
         <script>
           var user_name = localStorage.getItem('username');
           var usernameHeader = document.getElementById("usernameHeader");
-          
+      
           if (usernameHeader) {
-            if (user_name) {
-              usernameHeader.textContent= "Welcome "+user_name;
-            } else {
-              usernameHeader.textContent ="User not logged in";
-            }
+              if (user_name) {
+                  usernameHeader.textContent = "Welcome " + user_name;
+              } else {
+                  usernameHeader.textContent = "User not logged in";
+              }
           } else {
-            console.log("Element with ID is not found on this page.")
+              console.log("Element with ID is not found on this page.")
           }
-        </script>
+      </script>
+      
       </div>
       <div class="main-button">
         <nav>
@@ -50,13 +54,6 @@
       </div>
     </header>
     <main>
-      <div class="pdfdisplay">
-        <h4>File Upload</h4>
-        <input type="file" id="pdfFileInput" accept=".pdf" onchange="handleFileSelcet(this)">
-        <div id="fileInfo"></div>
-      </div>
-          <br/>
-        
       <div class ="chat-box">
         <h5>ChatBox (Link API key here)</h5>
       </br>
@@ -78,20 +75,29 @@
             <button>Send</button>
           </div>
         </div>
+        <div class="File_upload">
+        </br>
+          <h3>My Document</h3>
+          <!-- <br/>
+          <p>The document will be displayed here with the WebSocket</p> -->
+          <canvas id="pdf-canvas"></canvas>
+          <!-- <button id="convert-button" onclick="convert()">Convert PDF to Text</button> -->
+          <!-- <p id="pdf-text-display">PDF text here</p> -->
+          <!-- <input type="file" id="pdf-file-input" accept=".pdf"> -->
+          <input type="file" id="pdf-file-input">
+          <button onclick="loadPDF()">Upload PDF</button>
+          <canvas id="pdf-canvas"></canvas>
+
+        </body>
+      <br/>
+        </div>
       </div>
     </main>
 
     <footer>
-      <hr />
-        <h3>My Document</h3>
-        <br/>
-        <body>"The document will be displayed here with the WebSocket"
-        </body>
-      <br/>
-
       <span class="text-reset">Wiley Welch's</span>
       <br />
-      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
+      <a href="https://github.com/warlordwinter/startup/tree/main/HTML_code">GitHub</a>
     </footer>
   </body>
 </html>

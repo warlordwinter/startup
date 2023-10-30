@@ -68,3 +68,12 @@ For this deliverable I properly styled the application into its final appearance
 - **Application elements** - Used good contrast of colors and shadow uses.
 - **Application text content** - Consistent fonts and reoccuring color uses suggests great organization.
 - **Application images** - I made my image larger usings CSS.
+
+## JavaScript deliverable
+
+For this deliverable, I made the Login, Sign-Up,Station Page Work.
+
+- **login** - The JavaScript 
+- **database** - Displayed the voting counts. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+- **WebSocket** - I used the setInterval function to periodically increase a random vote count. This will be replaced with WebSocket messages later.
+- **application logic** - The highlight and ranking number change based up the user's selections.
