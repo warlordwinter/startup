@@ -18,6 +18,7 @@
     <script src="scripts/upload_station.js" defer></script>
     <script src="scripts/signup.js"defer></script>
     <script src="scripts/login.js" defer></script>
+    <script src="scripts/aichatbot.js" defer></script>
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
@@ -55,26 +56,16 @@
     </header>
     <main>
       <div class ="chat-box">
-        <h5>ChatBox (Link API key here)</h5>
-      </br>
         <!--Remember to add a box to help format your chatbox-->
-        <div class = "chat-messages">
-        <!--Find a way to hook of the AI to this via Java Script-->
-          <div class="User_message">
-            <span class="user">User_Name:</span>
-            <span class ="text">Hello There!</span>
+      <div class="chat-box">
+          <h5>ChatBox (Link API key here)</h5>
+          <div class="chat-messages">
           </div>
-          <div class="AI_messages">
-            <span class="user"> ChatBot: </span>
-            <span class="text"> Hi! What questions do you have about your document?</span>
+          <div class="chat-input">
+              <input type="text" id="user-input" placeholder="Ask Your Questions here">
+              <button id="send-button">Send</button>
           </div>
-          <br/>
-
-          <div class = "chat-input">
-            <input type ="text" placeholder ="Ask Your Questions here">
-            <button>Send</button>
-          </div>
-        </div>
+      </div>
         <div class="File_upload">
         </br>
           <h3>My Document</h3>

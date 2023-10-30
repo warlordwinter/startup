@@ -73,7 +73,7 @@ For this deliverable I properly styled the application into its final appearance
 
 For this deliverable, I made the Login, Sign-Up,Station Page Work.
 
-- **login** - The JavaScript 
-- **database** - Displayed the voting counts. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
-- **WebSocket** - I used the setInterval function to periodically increase a random vote count. This will be replaced with WebSocket messages later.
-- **application logic** - The highlight and ranking number change based up the user's selections.
+- **login** - When you press the login button on the sign-up or login page it will display the user's name on the upload station page.
+- **database** - User's name is stored in the local storage and is displayed on the upload station page.
+- **WebSocket** - The User is able to send a message to the Chat bot on the page and then have it send back an answer. *Note this feature is only suppose to send back an error has occured because I'm planning on connecting the actual response in a later deliverable.* 
+- **application logic** - The application has data validation feature which when a user inputs their name into the login that they will be able personalize their documentation page to display the users name. There will also hopefully, be a database intergration in the future for this.
