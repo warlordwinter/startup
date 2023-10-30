@@ -77,3 +77,6 @@ For this deliverable, I made the Login, Sign-Up,Station Page Work.
 - **database** - User's name is stored in the local storage and is displayed on the upload station page.
 - **WebSocket** - The User is able to send a message to the Chat bot on the page and then have it send back an answer. *Note this feature is only suppose to send back an error has occured because I'm planning on connecting the actual response in a later deliverable.* 
 - **application logic** - The application has data validation feature which when a user inputs their name into the login that they will be able personalize their documentation page to display the users name. There will also hopefully, be a database intergration in the future for this. Furthermore, the pdf upload will only work if there is pdf. Anything else will not work or display.
+
+
+$ ./deployFiles.sh -k ~/OneDrive/Desktop/CS_260/my_start_up/wjw37.pem -h pdfsimplifer.click -s startup

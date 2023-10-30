@@ -98,9 +98,24 @@ label{
 }
 
 footer {
-  flex: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust the height as needed */
   background-color: #F5EDE3;
 }
+
+.centered-content {
+  text-align: center;
+}
+
+
+hr {
+  width: 50%;        /* Adjust the width of the horizontal line */
+  margin: 10px auto;  /* Center the line horizontally and add some margin */
+}
+
 .credits{
   padding: 30px 30px;
   flex: auto;

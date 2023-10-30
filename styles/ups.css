@@ -84,3 +84,16 @@ h5{
     flex: 1 100vh;
   }
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust the height as needed */
+  background-color: #F5EDE3;
+}
+
+.centered-content {
+  text-align: center;
+}
