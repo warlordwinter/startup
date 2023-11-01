@@ -50,17 +50,19 @@ Difference Between #title and .grid Selector:
 
 Padding vs. Margin:
 Padding is the space inside an element, between its content and its border. It affects the spacing of an element's content from its border.
-
 Margin is the space outside an element, which separates it from other elements. It affects the spacing between elements.
-Images Displayed Using Flex:
 
+Images Displayed Using Flex:
 To use the Flexbox layout, you can apply display: flex; to a container element, and its child elements will be arranged as flexible items, allowing for easy alignment and distribution of space.
 
 Padding CSS:
 Padding CSS sets the padding (inner space) of an element. For example, padding: 10px; adds 10 pixels of padding to all sides of an element.
 
 Arrow Syntax Function Declaration:
-Arrow functions in JavaScript provide a concise way to define functions. For example, const add = (a, b) => a + b; defines an arrow function for addition.
+Arrow functions in JavaScript provide a concise way to define functions. For example, 
+```javascript
+const add = (a, b) => a + b; defines an arrow function for addition.
+```
 
 Map with an Array Output:
 When you use the map function with an array, it iterates through each element of the array and applies a provided function, returning a new array with the results of the function.
@@ -73,12 +75,37 @@ When you see a # selector in JavaScript, it typically refers to selecting elemen
 
 True Statements About the DOM:
 Without specific options, it's difficult to determine which statements are true. The DOM (Document Object Model) is a tree-like representation of the structure of an HTML document.
+    Web Page Structure: The DOM is like a tree representing the structure and content of a web page.
+
+    Works Anywhere: It's not tied to specific software, so you can use it on different devices and platforms.
+
+    Change Web Pages: You can use it to change web pages in real-time.
+
+    Tree of Elements: It organizes elements like a family tree with parents, children, and siblings.
+
+    Built-In Tools: It has built-in tools for making changes to web pages.
+
+    Handles Clicks and More: It can respond to user actions like clicks and keypresses.
+
+    Works on Different Browsers: It's designed to work the same way on different web browsers.
+
+    Loads Web Pages: It helps with loading web pages, and you can do things after the page loads.
+
+    Accessibility: It makes web content accessible to all users, including those with disabilities.
+
+    Helps with Data: It's used for connecting data to web elements.
+
+    Consistent Way for Web Tools: Many web tools use the DOM to work with web pages.
+
 
 Default Display Property for Span:
 By default, the HTML <span> element has a default CSS display property value of "inline," which means it doesn't introduce line breaks and flows with the surrounding text.
 
 Change Div Background Color to Red:
-To change the background color of all <div> elements to red, you can use the CSS rule: div { background-color: red; }.
+To change the background color of all <div> elements to red, you can use the CSS rule: 
+```css
+div { background-color: red; }.
+```
 
 Display Image with Hyperlink in HTML:
 To display an image with a hyperlink in HTML, you can use the following code:
@@ -102,53 +129,81 @@ Copy code
   color: green;
 }
 ```
-
 And apply this class to the element containing the "troubl" text in your HTML.
 
 
 What will the following code output when executed using a for loop and console.log?
 You didn't provide the code, so I can't answer this without seeing the code.
+```javascript
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+```
 
 How would you use JavaScript to select an element with the id of "byu" and change the text color of that element to green?
 You can change the text color of an element with the ID "byu" to green using JavaScript like this:
-javascript
+```javascript
 Copy code
 const element = document.getElementById("byu");
 element.style.color = "green";
+```
 
 What is the opening HTML tag for a paragraph, ordered list, unordered list, second level heading, first level heading, third level heading?
+```html
 Paragraph: <p>
 Ordered List: <ol>
 Unordered List: <ul>
 Second Level Heading: <h2>
 First Level Heading: <h1>
 Third Level Heading: <h3>
+```
 
 How do you declare the document type to be html?
 To declare the document type as HTML in an HTML document, you should use the following declaration at the very beginning of your HTML file:
-html
+```html
 Copy code
 <!DOCTYPE html>
+```
 
 What is valid JavaScript syntax for if, else, for, while, switch statements?
-if statement: if (condition) { /* code to execute if condition is true */ }
-else statement: if (condition) { /* code if condition is true */ } else { /* code if condition is false */ }
-for loop: for (initialization; condition; increment) { /* code to execute in the loop */ }
-while loop: while (condition) { /* code to execute as long as condition is true */ }
-switch statement:
-```javascript
-Copy code
+    if statement: if (condition) { /* code to execute if condition is true */ }
+    else statement: if (condition) { /* code if condition is true */ } 
+    else { /* code if condition is false */ }
+    for loop: for (initialization; condition; increment) { /* code to execute in the loop */ }
+    while loop: while (condition) { /* code to execute as long as condition is true */ }
+    switch statement:`
+
+    ```javascript
+    // Valid JavaScript syntax for if statement
+if (condition) {
+  // code to execute if the condition is true
+} else {
+  // code to execute if the condition is false
+}
+
+// Valid JavaScript syntax for for loop
+for (let i = 0; i < 5; i++) {
+  // code to execute in the loop
+}
+
+// Valid JavaScript syntax for while loop
+while (condition) {
+  // code to execute as long as the condition is true
+}
+
+// Valid JavaScript syntax for switch statement
 switch (expression) {
   case value1:
-    /* code to execute for value1 */
+    // code to execute for value1
     break;
   case value2:
-    /* code to execute for value2 */
+    // code to execute for value2
     break;
   default:
-    /* code to execute if no case matches */
+    // code to execute if no case matches
 }
 ```
+
 What is the correct syntax for creating a JavaScript object?
 You can create a JavaScript object using curly braces {} with key-value pairs. For example:
 ```javascript
@@ -162,23 +217,27 @@ Is it possible to add new properties to JavaScript objects?
 Yes, it's possible to add new properties to JavaScript objects even after the object is created. For example:
 javascript
 Copy code
+```javascript
 person.job = "Engineer"; // Adding a new property
+```
 
 If you want to include JavaScript on an HTML page, which tag do you use?
 To include JavaScript on an HTML page, you can use the <script> tag. You can place your JavaScript code inside a <script> element in the HTML document, like this:
-html
+```html
 Copy code
 <script>
   // JavaScript code here
 </script>
+```
 
 Given the following HTML, what JavaScript could you use to set the text "animal" to "crow" and leave the "fish" text unaffected?
 To change the text "animal" to "crow" while leaving the "fish" text unaffected, you can use JavaScript as follows:
-javascript
+```javascript
 Copy code
 document.getElementById("elementId").textContent = "crow";
-Which of the following correctly describes JSON?
+```
 
+Which of the following correctly describes JSON?
 JSON (JavaScript Object Notation) is a lightweight data interchange format. It is easy for humans to read and write and easy for machines to parse and generate. It is often used to transmit data between a server and a web application, and it's a text-based format that consists of key-value pairs.
 
 What does the console command chmod, pwd, cd, ls, vim, nano, mkdir, mv, rm, man, ssh, ps, wget, sudo do?
@@ -213,8 +272,8 @@ Yes, a web certificate (SSL/TLS certificate) is necessary to use HTTPS (Hypertex
 
 Can a DNS A record point to an IP address or another A record?
 A DNS A (Address) record maps a domain name to an IPv4 address. It cannot directly point to another A record. However, a DNS A record can point to an IP address, and you can use CNAME (Canonical Name) records to create aliases or point to other domain names.
-Port 443, 80, 22 is reserved for which protocol?
 
+Port 443, 80, 22 is reserved for which protocol?
 Port 443 is reserved for HTTPS (HTTP Secure).
 Port 80 is reserved for HTTP (Hypertext Transfer Protocol).
 Port 22 is reserved for SSH (Secure Shell) for secure remote access.
@@ -273,7 +332,40 @@ This is a basic example of using Promises for asynchronous operations. You can a
 
 You can include this example and explanation in your midterm notes to demonstrate how Promises work in JavaScript.
 
+______________________________________
+**NODE.JS**
+**FOR THE REST OF THE SEMESTER**
+You will be expected to run your front end code from the browser!
 
+https://github.com/webprogramming260/.github/blob/main/profile/webServices/node/node.md
 
+Node.JS is used to manage, organize, and download modules from the cloud.
 
+Here is the code that generates the server.
+```
+javascript
+const http = require('http'); // this is a module to create a server
+let foo = {name:"Mark",number:13} //This is creating an object
+const server = http.createServer(function (req, res) { 
+//This section here is how we are creating he server
+//Req stands for request res stands for response
+//   res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.writeHead(200, { "Content-Type": "application/json"});
+  //This code shows how the code is going to respond to a req
+//   res.write(`<h1>Hello Node.js! [${req.method}] ${req.url}</h1>`);
+  res.write(JSON.stringify(foo));
+  //This code sends a response body to the req in this case
+  //it is a JSON named foo.
+  res.end();
+});
+
+server.listen(8080, () => {
+  console.log(`Web service listening on port 8080`);
+});
+```
+**Debuging in Node.js**
+follow the instructions listed here
+https://github.com/webprogramming260/.github/blob/main/profile/webServices/debuggingNode/debuggingNode.md
+
+debugging works similar to other programs.
 
