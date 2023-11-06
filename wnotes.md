@@ -367,5 +367,25 @@ server.listen(8080, () => {
 follow the instructions listed here
 https://github.com/webprogramming260/.github/blob/main/profile/webServices/debuggingNode/debuggingNode.md
 
-debugging works similar to other programs.
+The debugging works similar to other programs. However here are a couple things
+
+*Important Notes*
+1.Nodemon module is great for debuggin node.js. It runs immediatly after a save.
+2. "F5" is used for debugging in Node.js
+3. "F11" allows you to dive deeper into the orignal code of the creators
+
+
+______________________________________________________________________
+**HUGE note about https and http**
+for our program we will need to use http when booting up our data via Node.js
+______________________________________________________________________
+## **PM2**
+When you run a program it will automatically terminate when you close the console. In order to keep the program running after shutdown it need to become a *daemon*. We all have daemons haunting us.
+
+An easy way to manage our deams is through *Process Manager 2 aka PM2*
+
+See this link to see commands for pm2: https://github.com/webprogramming260/.github/blob/main/profile/webServices/pm2/pm2.md
+
+To access your caddy use the command
+PS C:\Users\18019\OneDrive\Desktop\CS_260\my_start_up> ssh -i wjw37.pem ubuntu@34.235.87.249
 
