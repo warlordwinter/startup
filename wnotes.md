@@ -389,3 +389,10 @@ See this link to see commands for pm2: https://github.com/webprogramming260/.git
 To access your caddy use the command
 PS C:\Users\18019\OneDrive\Desktop\CS_260\my_start_up> ssh -i wjw37.pem ubuntu@34.235.87.249
 
+## **UI Testing**
+There is so much to test and not enough time to check everything. To remedy that, we can use Playwright to help us
+Playwright is a node extension that can be used to overcome a slu of problems. You can use it to test UI stuff.
+Here is a link on how to use playwright and how to use it to test stuff.
+https://github.com/webprogramming260/.github/blob/main/profile/webServices/uiTesting/uiTesting.md
+
+## Endpoint Testing Jest
