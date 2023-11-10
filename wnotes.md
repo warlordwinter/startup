@@ -396,3 +396,22 @@ Here is a link on how to use playwright and how to use it to test stuff.
 https://github.com/webprogramming260/.github/blob/main/profile/webServices/uiTesting/uiTesting.md
 
 ## Endpoint Testing Jest
+End point testing a is a common industry practice. However, it takes a lot of effor to write your own tests. Getting good at this skill will allow you to have a significant advantage over the competetion.
+
+**jest**
+Jest is an easier tool to make testing faster because you don't need to run it inside a browser.
+
+```
+javascript
+test('that equal values are equal', () => {
+  expect(false).toBe(true);
+});
+```
+
+The test function takes a description as a parameter and then the second part of the function calls a function.
+
+See this link and your project folder about endpoints to see how this is done
+https://github.com/webprogramming260/.github/blob/main/profile/webServices/endpointTesting/endpointTesting.md
+
+We can make this even simpler by using the "supertest" function
+The supertest function allows us to test our code via our environment. Normally, we would have to test it over a webservice. but with this we don't have to worry anymore. :-J
