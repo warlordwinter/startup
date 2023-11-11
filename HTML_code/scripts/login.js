@@ -16,3 +16,9 @@ function login() {
         alert('Please enter a valid username and password.');
     }
 }
+
+//lets get that fetch request
+fetch('/login',{
+    
+
+}).then

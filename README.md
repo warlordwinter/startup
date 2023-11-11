@@ -80,8 +80,8 @@ For this deliverable, I made the Login, Sign-Up,Station Page Work.
 
 |URL|HTTP Method| Purpose|
 |---|-----------|--------|
-|
-|
+|`/login`|
+|`/signup`| 
 |
 |
 |

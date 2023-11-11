@@ -415,3 +415,33 @@ https://github.com/webprogramming260/.github/blob/main/profile/webServices/endpo
 
 We can make this even simpler by using the "supertest" function
 The supertest function allows us to test our code via our environment. Normally, we would have to test it over a webservice. but with this we don't have to worry anymore. :-J
+
+##HTTP methods
+HTTP (Hypertext Transfer Protocol) defines a set of request methods that indicate the desired action to be performed for a given resource. Here are the common HTTP methods:
+
+GET:
+Used to request data from a specified resource. The GET method should only retrieve data and not modify it.
+
+POST:
+Used to submit data to be processed to a specified resource. The data is included in the body of the request.
+
+PUT:
+Used to update a resource or create a new resource if it doesn't exist. The entire representation of the resource is replaced.
+
+PATCH:
+Similar to PUT, but it is used to apply partial modifications to a resource.
+
+DELETE:
+Used to request that a resource be removed or deleted.
+
+HEAD:
+Similar to GET, but it asks the server to return only the headers of the response, without the actual data.
+
+OPTIONS:
+Used to describe the communication options for the target resource. It can be used to check the server capabilities before sending a request.
+
+TRACE:
+Used to perform a message loop-back test along the path to the target resource.
+
+CONNECT:
+Reserved for use with proxy servers. It converts the request connection to a transparent TCP/IP tunnel.
