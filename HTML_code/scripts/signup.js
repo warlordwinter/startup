@@ -16,3 +16,11 @@ function signUP() {
         alert('Please enter a valid username and password.');
     }
 }
+
+//lets get that fetch request for signup
+fetch('/signup',{
+}).then ((response) => response.json())
+.then((jsonResponse) => {
+    console.log(jsonResponse)
+});
+

@@ -17,8 +17,17 @@ function login() {
     }
 }
 
-//lets get that fetch request
-fetch('/login',{
-    
+//lets get that fetch request for login
+fetch('/login', {
+    body: JSON.stringify({
+        username: 'username',
+        password: 'password',
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
 
-}).then
+}).then((response) => response.json())
+    .then((jsonResponse) => {
+        console.log(jsonResponse)
+    });
