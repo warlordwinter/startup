@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express()
 
-let authdict = {};
+let authdict = {username: "John", password: "mypassword"};
 
 app.use(express.json());
 app.use(express.static('HTML_code'));
@@ -44,6 +44,7 @@ app.post("/signup", (req, res) => {
 app.listen(4000, () => {
     console.log("port connected");
 })
+
 function signUP() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;

@@ -1,14 +1,15 @@
+<!-- FILEPATH: /c:/Users/18019/OneDrive/Desktop/CS_260/my_start_up/startup/HTML_code/upload_station.html -->
 <!DOCTYPE html>
 <html lang="en">
-
-  <link rel="stylesheet" type="text/css" href="styles/ups.css" />
-  <link
+  
+    <link rel="stylesheet" type="text/css" href="styles/ups.css" />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
-  />
-  <head>
+    />
+<head>
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,10 +17,9 @@
     <link rel="icon" href="favicon.ico" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script src="scripts/upload_station.js" defer></script>
-    <script src="scripts/signup.js"defer></script>
+    <script src="scripts/signup.js" defer></script>
     <script src="scripts/login.js" defer></script>
     <script src="scripts/aichatbot.js" defer></script>
-    <
   </head>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
@@ -29,18 +29,18 @@
         <script>
           var user_name = localStorage.getItem('username');
           var usernameHeader = document.getElementById("usernameHeader");
-      
+
           if (usernameHeader) {
-              if (user_name) {
-                  usernameHeader.textContent = "Welcome " + user_name;
-              } else {
-                  usernameHeader.textContent = "User not logged in";
-              }
+            if (user_name) {
+              usernameHeader.textContent = "Welcome " + user_name;
+            } else {
+              usernameHeader.textContent = "User not logged in";
+            }
           } else {
-              console.log("Element with ID is not found on this page.")
+            console.log("Element with ID is not found on this page.")
           }
-      </script>
-      
+        </script>
+
       </div>
       <div class="main-button">
         <nav>
@@ -56,33 +56,20 @@
       </div>
     </header>
     <main>
-      <div class ="chat-box">
-        <!--Remember to add a box to help format your chatbox-->
       <div class="chat-box">
-          <h5>ChatBox (Link API key here)</h5>
-          <div class="chat-messages">
-          </div>
-          <div class="chat-input">
-              <input type="text" id="user-input" placeholder="Ask Your Questions here">
-              <button id="send-button">Send</button>
-          </div>
-      </div>
-        <div class="File_upload">
-        </br>
-          <h3>My Document</h3>
-          <!-- <br/>
-          <p>The document will be displayed here with the WebSocket</p> -->
-          <canvas id="pdf-canvas"></canvas>
-          <!-- <button id="convert-button" onclick="convert()">Convert PDF to Text</button> -->
-          <!-- <p id="pdf-text-display">PDF text here</p> -->
-          <!-- <input type="file" id="pdf-file-input" accept=".pdf"> -->
-          <input type="file" id="pdf-file-input">
-          <button onclick="loadPDF()">Upload PDF</button>
-          <canvas id="pdf-canvas"></canvas>
-
-        </body>
-      <br/>
+        <h5>ChatBox (Link API key here)</h5>
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="Ask Your Questions here" />
+          <button id="send-button">Send</button>
         </div>
+      </div>
+      <div class="File_upload">
+        <br />
+        <h3>My Document</h3>
+        <canvas id="pdf-canvas"></canvas>
+        <input type="file" id="pdf-file-input" accept=".pdf" />
+        <button onclick="loadPDF()">Upload PDF</button>
       </div>
     </main>
 

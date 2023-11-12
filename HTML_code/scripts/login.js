@@ -1,5 +1,5 @@
 
-function login() {
+async function login() {
     // Get the input values
     const login_credentials = {
         username: document.getElementById("username").value,
@@ -8,25 +8,24 @@ function login() {
 
     // You can perform login/authentication logic here
     if (login_credentials.username && login_credentials.password) {
-        fetch('/login', {
-            method: 'POST',
-            body: JSON.stringify(login_credentials),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        
-        }).then((response) => {
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                body: JSON.stringify(login_credentials),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            });
             if (response.status === 200) {
                 // Show success
                 window.location.href = 'upload_station.html';
             } else {
-                return response.json();
+                const data = await response.json();
+                alert(data);
             }
-        }).then((data) => {
-            alert(data);
-        });
-        // Redirect to another page
-        
+        } catch (error) {
+            alert('There was an error with the server. Please try again later.');
+        }
     } else {
         // Handle the case where login information is incomplete or incorrect
         alert('Please enter a valid username and password.');

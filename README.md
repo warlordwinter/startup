@@ -88,7 +88,9 @@ For this deliverable, I made the Login, Sign-Up,Station Page Work.
 
 For this deliverable I added backend endpoints that catch login and signup information
 
-- **Node.js/Express HTTP service** - done!
+- **Node.js/Express HTTP service** - The Endpoints are looking great for loin and signup. You can use these commands to check 
+    - curl -X POST -H "Content-Type: application/json" -d '{"username": "NewUser", "password": "NewPassword"}' http://localhost:4000/signup
+    - curl -X POST -H "Content-Type: application/json" -d '{"username": "John", "password": "mypassword"}' http://localhost:4000/login
 - **Static middleware for frontend** - done!
 - **Calls to third party endpoints** - I didn't have time to implement this. 😔
 - **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for voting.
