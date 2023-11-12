@@ -84,6 +84,13 @@ For this deliverable, I made the Login, Sign-Up,Station Page Work.
 |`/signup`| POST | Holds the signup info| str |
 |`/chatbox`|POST| Holds Chat messages| str|
 
-Ser
+## Service deliverable
 
+For this deliverable I added backend endpoints that catch login and signup information
+
+- **Node.js/Express HTTP service** - done!
+- **Static middleware for frontend** - done!
+- **Calls to third party endpoints** - I didn't have time to implement this. 😔
+- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for voting.
+- **Frontend calls service endpoints** - I did this using the fetch function.
 $ ./deployFiles.sh -k ~/OneDrive/Desktop/CS_260/my_start_up/wjw37.pem -h pdfsimplifer.click -s startup
