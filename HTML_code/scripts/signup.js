@@ -19,6 +19,15 @@ function signUP() {
 
 //lets get that fetch request for signup
 fetch('/signup',{
+    method: "POST",
+    body: JSON.stringify({
+        username: 'username',
+        password: 'password',
+        fullName: 'fullname'
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
 }).then ((response) => response.json())
 .then((jsonResponse) => {
     console.log(jsonResponse)

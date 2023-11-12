@@ -9,11 +9,13 @@ app.use(express.static('HTML_code'));
 const apiRouter=express.Router();
 app.use('/api', apiRouter);
 
-app.get("/login",(req,res)=>{
+app.post("/login",(req,res)=>{
+    console.log("We received the Data for Login")
+    console.log(req.body)
     res.send("login")
 })
 
-app.get("/signup",(req,res)=>{
+app.post("/signup",(req,res)=>{
     res.send("signup")
 })
 

@@ -80,9 +80,10 @@ For this deliverable, I made the Login, Sign-Up,Station Page Work.
 
 |URL|HTTP Method| Purpose | Data type Stored|
 |---|-----------|--------------------|------------|
-|`/login`| GET | Holds the login info| str |
-|`/signup`| GET | Holds the signup info| str |
+|`/login`| POST | Holds the login info| str |
+|`/signup`| POST | Holds the signup info| str |
 |`/chatbox`|POST| Holds Chat messages| str|
 
+Ser
 
 $ ./deployFiles.sh -k ~/OneDrive/Desktop/CS_260/my_start_up/wjw37.pem -h pdfsimplifer.click -s startup
