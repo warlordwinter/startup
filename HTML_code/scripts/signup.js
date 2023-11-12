@@ -28,26 +28,30 @@ function signUP() {
 
                 // Assuming you have a success message in the response
                 alert('User registered successfully.');
-            })
-            .catch((error) => {
-                // Handle errors, including the case when the username is already in use (status code 409)
-                console.error('Error during registration:', error);
 
-                // Check if the error is due to a conflict (username already in use)
-                if (error.message.includes('Status: 409')) {
-                    alert('Username already in use. Please choose a different username.');
+                // Store the username in local storage
+                localStorage.setItem('username', username);
+
+                // Redirect to another page
+                window.location.href = 'upload_station.html';
+            })
+                        .catch((error) => {
+                            // Handle errors, including the case when the username is already in use (status code 409)
+                            console.error('Error during registration:', error);
+
+                            // Check if the error is due to a conflict (username already in use)
+                            if (error.message.includes('Status: 409')) {
+                                alert('Username already in use. Please choose a different username.');
+                            } else if (error.message.includes('Failed to fetch')) {
+                                alert('Failed to connect to the server. Please try again later.');
+                            } else {
+                                // Handle other errors as needed
+                                console.log(jsonResponse)
+                                alert('An error occurred during registration.');
+                            }
+                        });
                 } else {
-                    // Handle other errors as needed
-                    alert('An error occurred during registration.');
+                    // Handle the case where login information is incomplete or incorrect
+                    alert('Please enter a valid username and password.');
                 }
-            });
-// Update the user_name variable
-        let user_name;
-        user_name = username;
-        // Redirect to another page
-        window.location.href = 'upload_station.html';
-    } else {
-        // Handle the case where login information is incomplete or incorrect
-        alert('Please enter a valid username and password.');
-    }
-}
+            }
