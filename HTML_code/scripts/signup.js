@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 function signUP() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;

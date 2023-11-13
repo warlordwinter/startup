@@ -11,21 +11,25 @@ app.use(express.json());
 app.use(express.static('HTML_code'));
 app.use(cookieParser());
 
+
 const apiRouter = express.Router();
 app.use('/api', apiRouter);
 
 app.post("/login", (req, res) => {
+    let authdict = {username: "John", password: "mypassword"};
     console.log("We received the Data for Login")
     let data = req.body;
     if (data.username === undefined || data.password === undefined) {
-        res.status(400).send("Missing username or password");
+        res.status(400).json({ error: "Missing username or password" });
+        console.log("Missing username or password");
     } else if (authdict.hasOwnProperty(data.username) && authdict[data.username] === data.password) {
         console.log(`Key '${data.username}' confirmed identity`);
-        res.status(200).send(data.username);
+        res.status(200).json({ username: data.username });
     } else {
-        res.status(400).send("User not found");
+        res.status(400).json({ error: "User not found" });
     }
 });
+
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
