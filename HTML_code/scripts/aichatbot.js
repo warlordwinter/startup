@@ -36,16 +36,17 @@ async function sendMessageToChatbot(message) {
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${apiKey}`,
-                'Content-Type': 'application/json',
+              'Authorization': `Bearer ${apiKey}`,
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                messages: [
-                    { role: 'system', content: 'You are a chatbot' },
-                    { role: 'user', content: message },
-                ],
+              messages: [
+                { role: 'system', content: 'You are a chatbot' },
+                { role: 'user', content: message },
+              ],
             }),
-        });
+          });
+          
 
         console.log('Request Data:', JSON.stringify({
             messages: [
