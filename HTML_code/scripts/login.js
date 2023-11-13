@@ -13,17 +13,18 @@ function login() {
     if (login_credentials.username && login_credentials.password) {
         fetch('/login', {
             method: 'POST',
-            body: JSON.stringify(login_credentials),
+            body: JSON.stringify({ username: 'John', password: 'password' }),
             headers: {
-                'Content-Type': 'application/json; charset=UTF-8',
+                'Content-Type': 'application/json',
             },
         })
+        
         .then(response => {
             if (response.status === 400) {
                 // Show an alert for invalid username or password
                 alert('Please enter a valid username and password.');
                 throw new Error('Invalid credentials'); // Skip the subsequent .then block
-            } else if (response.status === 200) {
+            } if (response.status === 200) {
                 // Show success
                 alert('Login successful.');
                 localStorage.setItem('username', login_credentials.username);
