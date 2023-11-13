@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const app = express();
 let authdict = {username: "John", password: "mypassword"};
 
+
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.static('HTML_code'));
 app.use(cookieParser());
@@ -13,43 +15,41 @@ const apiRouter = express.Router();
 app.use('/api', apiRouter);
 
 app.post("/login", (req, res) => {
-    //use this command to test this curl -i -s -X POST localhost:4000/login -H 'Content-Type: application/json' -d '{"username": "John", "password": "mypasswordislit"}'
     console.log("We received the Data for Login")
     let data = req.body;
     if (data.username === undefined || data.password === undefined) {
         res.status(400).send("Missing username or password");
-    } else if (authdict.hasOwnProperty(data.username)) {
-        console.log("Key '${data.username}' confirm identity");
-
-        res.status(200).send(data.username);//send this info back to the client
-    } else{
-        res.status(400).send("User not found")
-    }
-})
-
-app.post("/signup", (req, res) => {
-    let data = req.body;
-    if (data.username === undefined || data.password === undefined) {
-        res.status(400).end();
+    } else if (authdict.hasOwnProperty(data.username) && authdict[data.username] === data.password) {
+        console.log(`Key '${data.username}' confirmed identity`);
+        res.status(200).send(data.username);
     } else {
-        if (data.username in authdict) {
-            console.log("This username is already being used");
-            res.status(409).send("Username already in use." ); // send this info back to the client
-        } else {
-             authdict[data.username] = data.password;
-            // res.cookie('username', data.username, { maxAge: 900000, httpOnly: true });')
-            res.status(201).send("User registered successfully."); // send this info back to the client
-        }
+        res.status(400).send("User not found");
     }
 });
 
-app.get('/upload_station', (req, res) => {
-    // Retrieve the username from the cookie
-    const username = req.cookies.username;
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 
-    // Render the upload_station view and pass the username
-    res.render('upload_station', { username: username });
+app.post("/signup", jsonParser, (req, res) => {
+    try {
+        let data = req.body;
+        if (data.username === undefined || data.password === undefined) {
+            res.status(400).end();
+        } else {
+            if (data.username in authdict) {
+                console.log("This username is already being used");
+                res.status(409).json({ error: "Username already in use." });
+            } else {
+                authdict[data.username] = data.password;
+                res.status(201).json({ message: "User registered successfully." });
+            }
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(400).json({ error: "An error occurred during registration." });
+    }
 });
+
 
 app.listen(4000, () => {
     console.log("port connected");

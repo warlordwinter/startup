@@ -1,10 +1,12 @@
 
 async function login() {
+    console.log("function is called")
     // Get the input values
     const login_credentials = {
         username: document.getElementById("username").value,
-        password: document.getElementById("password").value
+        password: document.getElementById("password").value,
     }
+    console.log(login_credentials)
 
     // You can perform login/authentication logic here
     if (login_credentials.username && login_credentials.password) {
