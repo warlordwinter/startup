@@ -78,21 +78,24 @@ For this deliverable, I made the Login, Sign-Up,Station Page Work.
 - **WebSocket** - The User is able to send a message to the Chat bot on the page and then have it send back an answer. *Note this feature is only suppose to send back an error has occured because I'm planning on connecting the actual response in a later deliverable.* 
 - **application logic** - The application has data validation feature which when a user inputs their name into the login that they will be able personalize their documentation page to display the users name. There will also hopefully, be a database intergration in the future for this. Furthermore, the pdf upload will only work if there is pdf. Anything else will not work or display.
 
-|URL|HTTP Method| Purpose | Data type Stored|
-|---|-----------|--------------------|------------|
-|`/login`| POST | Holds the login info| str |
-|`/signup`| POST | Holds the signup info| str |
-|`/chatbox`|POST| Holds Chat messages| str|
-
 ## Service deliverable
 
 For this deliverable I added backend endpoints that catch login and signup information
 
-- **Node.js/Express HTTP service** - The Endpoints are looking great for loin and signup. You can use these commands to check 
-    - curl -X POST -H "Content-Type: application/json" -d '{"username": "NewUser", "password": "NewPassword"}' http://localhost:4000/signup
-    - curl -X POST -H "Content-Type: application/json" -d '{"username": "John", "password": "mypassword"}' http://localhost:4000/login
-- **Static middleware for frontend** - done!
-- **Calls to third party endpoints** - I didn't have time to implement this. 😔
-- **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for voting.
-- **Frontend calls service endpoints** - I did this using the fetch function.
+- **Node.js/Express HTTP service** - The Endpoints are looking great for loin and signup. 
+- **Static middleware for frontend** - Check my index.js to see this in action. Mostly login, signup, and send-message.
+    **Here is how I have been testing my points** 
+    -curl -X POST -H "Content-Type: application/json" -d '{"username":"John","password":"password"}' http://localhost:4000/login
+    -**This will only work for me because of the token** curl -X POST -H "Content-Type: application/json" -d '{"message":"Hello, bot!"}' http://localhost:4000/send-message
+    -curl -X POST -H "Content-Type: application/json" -d '{"username":"Alice","password":"mypassword"}' http://localhost:4000/signup
+- **Calls to third party endpoints** - I'm calling some from OPEN AI but it cost's money to test them. I'm saving this part for later until I can set up a method to not cost me any money.
+- **Backend service endpoints** - I'm storing the login info in a dictionary until the MONGO portion.
+- **Frontend calls service endpoints** - I did this using the fetch function. You can see the corasponding JS files.
+
+|URL|HTTP Method| Purpose | Data type Stored|
+|---|-----------|--------------------|------------|
+|`/login`| POST | Holds the login info| str |
+|`/signup`| POST | Holds the signup info| str |
+|`/send-message`|POST| calls the third party endpoint| str|
+
 $ ./deployFiles.sh -k ~/OneDrive/Desktop/CS_260/my_start_up/wjw37.pem -h pdfsimplifer.click -s startup

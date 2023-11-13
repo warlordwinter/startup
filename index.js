@@ -1,7 +1,6 @@
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
-
 const app = express();
 
 
@@ -56,6 +55,33 @@ app.post("/signup", jsonParser, (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(400).json({ error: "An error occurred during registration." });
+    }
+});
+
+const apiKey = process.env.OPENAI_API_KEY;
+app.post('/send-message', async (req, res) => {
+    const userMessage = req.body.message;
+
+    // Perform OpenAI API request using apiKey
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            messages: [
+                { role: 'system', content: 'You are a chatbot' },
+                { role: 'user', content: userMessage },
+            ],
+        }),
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        res.json({ botResponse: data.choices[0].message.content });
+    } else {
+        res.status(response.status).json({ error: 'Error sending message to the API' });
     }
 });
 
