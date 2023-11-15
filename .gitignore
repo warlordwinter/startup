@@ -4,3 +4,5 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 .env
+/wjw37.pem
+/dbConfig.json
