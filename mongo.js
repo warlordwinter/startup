@@ -42,8 +42,7 @@ async function addPDF(username,data) {
 }
 
 
-
-async function addUser(username) {
+async function addUser(username, password) {
     try {
         const result = await userCollection.insertOne({ username: username, password: password });
         console.log(`User added in MongoDB with _id: ${result.insertedId}`);

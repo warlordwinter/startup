@@ -1,20 +1,10 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
-// const { MongoClient, ServerApiVersion } = require('mongodb');
-const bodyParser = require('body-parser');
-// const fetch = require('node-fetch'); // Add this line to import the fetch function
+// const bodyParser = require('body-parser');
 const app = express();
-// const config = require('./dbConfig.json');
 const mongo = require('./mongo');
-
-// const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
-// const client = new MongoClient(url, {
-//     serverApi: {
-//         version: ServerApiVersion.v1,
-//         strict: true,
-//         deprecationErrors: true,
-//     }
-// });
+// const multer = require('multer');
+const { client, addPDF } = require('./mongo');
 
 app.use(cookieParser());
 app.use(express.json());
@@ -34,22 +24,6 @@ app.post("/login", (req, res) => {
     }
 });
 
-    // console.log("Received login request", req.body);
-
-    // const data = req.body;
-    // if (!data.username || !data.password) {
-    //     res.status(400).json({ error: "Missing username or password" });
-    //     console.log("Missing username or password");
-    //     return;
-    // }
-    // const user = authdict[data.username];
-    // if (user && user.password === data.password) {
-    //     console.log(`User '${data.username}' successfully logged in`);
-    //     res.status(200).json({ username: data.username });
-    // } else {
-    //     console.log(`User '${data.username}' not found or incorrect password`);
-    //     res.status(400).json({ error: "Invalid credentials" });
-    // }
 
 app.post("/signup", (req, res) => {
     if (req.body.username === undefined || req.body.password === undefined) {
@@ -59,27 +33,10 @@ app.post("/signup", (req, res) => {
             console.log("This username is already being used");
             res.status(409).json({ error: "Username already in use." });
         } else {
-            mongo.addUser(req.body);
+            mongo.addUser(req.body.username, req.body.password);
             res.status(201).json({ message: "User registered successfully." });
         }
     }
-    // try {
-    //     let data = req.body;
-    //     if (data.username === undefined || data.password === undefined) {
-    //         res.status(400).end();
-    //     } else {
-    //         if (data.username in authdict) {
-    //             console.log("This username is already being used");
-    //             res.status(409).json({ error: "Username already in use." });
-    //         } else {
-    //             authdict[data.username] = data.password;
-    //             res.status(201).json({ message: "User registered successfully." });
-    //         }
-    //     }
-    // } catch (err) {
-    //     console.error(err);
-    //     res.status(400).json({ error: "An error occurred during registration." });
-    // }
 });
 
 const apiKey = process.env.OPENAI_API_KEY;
@@ -114,25 +71,50 @@ app.post('/send-message', async (req, res) => {
     }
 });
 
-app.post('/upload-pdf', bodyParser.json(), async (req, res) => {
-    const data = req.body.data;
 
+// index.js
+
+// index.js
+
+const multer = require('multer');
+const upload = multer();
+
+// index.js
+
+// index.js
+
+app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
     try {
-        await client.connect();
-        const db = client.db('rental');
-        const pdfCollection = db.collection('pdfs'); // this is the collection name
-
-        const result = await pdfCollection.insertOne({ data });
-
+        console.log("uploading pdf:" ,req.file)
+      const fileData = req.file.buffer;
+  
+      const client = new MongoClient(url);
+      await client.connect();
+      const db = client.db('rental');
+      const pdfCollection = db.collection('pdfs');
+  
+      const result = await pdfCollection.insertOne({ data: fileData });
+  
+      if (result.insertedId) {
         console.log(`PDF stored in MongoDB with _id: ${result.insertedId}`);
         res.json({ success: true });
+      } else {
+        console.error('Failed to insert PDF into MongoDB:', result);
+        res.status(500).json({ success: false, error: 'Internal server error' });
+      }
     } catch (ex) {
-        console.log(`Error storing PDF in MongoDB: ${ex.message}`);
-        res.status(500).json({ success: false, error: ex.message });
+      console.error('Error storing PDF in MongoDB:', ex);
+      res.status(500).json({ success: false, error: 'Internal server error' });
     } finally {
-        await client.close();
+      await client.close();
     }
-});
+  });
+  
+  
+
+  
+  
+
 
 app.get('/get-pdf', async (req, res) => {
     try {
