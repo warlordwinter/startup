@@ -10,5 +10,12 @@
     "node-fetch": "^3.3.2",
     "pdf-parse": "^1.1.1",
     "playwright": "^1.39.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
