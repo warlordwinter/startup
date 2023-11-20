@@ -27,11 +27,12 @@ module.exports = {
   const userCollection = db.collection('users')
   const pdfCollection = db.collection('pdfs')
   
-  async function addPDF(username, data) {
+  async function addPDF(username, data, fileName) {
     try {
       const result = await pdfCollection.insertOne({
         username: username,
         data: data,
+        fileName: fileName,
       })
       console.log('result', result)
       return result
@@ -93,4 +94,3 @@ module.exports = {
       return false
     }
   }
-  
