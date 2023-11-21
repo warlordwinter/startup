@@ -30,7 +30,6 @@
         <script>
           var user_name = localStorage.getItem('username');
           var usernameHeader = document.getElementById("usernameHeader");
-
           if (usernameHeader) {
             if (user_name) {
               usernameHeader.textContent = "Welcome " + user_name;
@@ -41,7 +40,6 @@
             console.log("Element with ID is not found on this page.")
           }
         </script>
-
       </div>
       <div class="main-button">
         <nav>
@@ -77,7 +75,7 @@
         <br />
         <h3>Display PDF</h3>
         <input type="text" id="pdf-file-name" placeholder="Enter PDF name" />
-        <button onclick="getPDf()">Get PDF</button>
+        <button onclick="getPDF()">Get PDF</button>
         <div id="pdf-viewer"></div>
       </div>
     </main>

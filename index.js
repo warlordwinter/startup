@@ -1,5 +1,7 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
+const fs = require('fs')
+const path = require('path')
 // const bodyParser = require('body-parser');
 const app = express()
 const {
@@ -105,29 +107,32 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
 
 //Notes from Gabe
 //Make sure to get the filename requested from the get request!!!
-app.get('/get-pdf', async (req, res) => {
+app.get('/get-pdf/:fileName', async (req, res) => {
   try {
-    if (req.body.username === undefined || req.body.filename === undefined) {
-      res.status(400).end()
+    if (!req.params.fileName) {
+      res.status(400).end();
     } else {
-      const result = await getPDF(req.body.username, req.body.filename)
+      const result = await getPDF(req.params.fileName);
 
       if (result) {
-        console.log('We have the user and filename', result)
-        res.status(200).json({ result })
+        // Set the appropriate Content-Type for a PDF
+        res.setHeader('Content-Type', 'application/pdf');
+        // Send the binary data directly
+        res.status(200).send(result.buffer);
       } else {
-        res.status(404).json({ error: 'PDF not found' })
+        res.status(404).json({ error: 'PDF not found' });
       }
     }
   } catch (ex) {
-    console.log(`Error retrieving PDF from MongoDB: ${ex.message}`)
-    res.status(500).json({ success: false, error: ex.message })
+    console.log(`Error retrieving PDF from MongoDB: ${ex.message}`);
+    res.status(500).json({ success: false, error: ex.message });
   }
-})
+});
 
 app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' })
-})
+  res.sendFile('index.html', { root: 'public' });
+});
+
 
 const port = 4000
 app.listen(port, () => {
