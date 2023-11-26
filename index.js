@@ -118,7 +118,10 @@ app.get('/get-pdf/:fileName', async (req, res) => {
         // Set the appropriate Content-Type for a PDF
         res.setHeader('Content-Type', 'application/pdf');
         // Send the binary data directly
-        res.status(200).send(result.buffer);
+        console.log('result of the PDF', result)
+        console.log(result)
+        console.log(result.data.buffer)
+        res.status(200).send(result.data.buffer);
       } else {
         res.status(404).json({ error: 'PDF not found' });
       }

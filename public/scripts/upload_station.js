@@ -36,29 +36,26 @@ function getPDF() {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      return response.blob(); // Change this to response.arrayBuffer()
-})
-    .then(blob => {
-      // Convert the blob to a Buffer
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(Buffer.from(reader.result));
-        reader.onerror = reject;
-        reader.readAsArrayBuffer(blob);
-      });
+      return response.arrayBuffer(); // Change this to response.arrayBuffer()
     })
     .then(buffer => {
       // Now you can use the buffer for further processing
       const url = URL.createObjectURL(new Blob([buffer], { type: 'application/pdf' }));
-
+      console.log(url);
       // Rest of your code to display the PDF
+
+      // Remove existing PDF viewer content
+      const pdfViewer = document.getElementById('pdf-viewer');
+      pdfViewer.innerHTML = '';
+
+      // Create an <embed> element to display the PDF
       const embedElement = document.createElement('embed');
       embedElement.src = url;
       embedElement.type = 'application/pdf';
       embedElement.width = '100%';
       embedElement.height = '600px';
 
-      const pdfViewer = document.getElementById('pdf-viewer');
+      // Append the <embed> element to the PDF viewer container
       pdfViewer.appendChild(embedElement);
 
       console.log('PDF retrieved successfully');
