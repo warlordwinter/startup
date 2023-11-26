@@ -15,9 +15,6 @@ const {
 
 const multer = require('multer')
 const upload = multer()
-// Looks like maybe you were already thinking about doing this? because you have an addPDF function here?
-// I was trying to earlier but it wasn't working right. So I was just tinkering around.
-//ok, lets see if we can get it to work
 
 app.use(cookieParser())
 app.use(express.json())

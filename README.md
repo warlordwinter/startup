@@ -97,5 +97,14 @@ For this deliverable I added backend endpoints that catch login and signup infor
 |`/login`| POST | Holds the login info| str |
 |`/signup`| POST | Holds the signup info| str |
 |`/send-message`|POST| calls the third party endpoint| str|
+|`/get-pdf:/:fileName`| GET | Retrieves the PDF from DB| arrayBuffer |
+|`/upload-pdf`| POST | Stores PDF in MONGOS | arrayBuffer |
+
+## DB Deliverable
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My endpoints now process the PDF's and Login and Signup Data
+- **Stores data in MongoDB** - done!
+- **Retrieves Data in Mongos** - done! Make sure you spell the Filename correctly.
 
 $ ./deployFiles.sh -k ~/OneDrive/Desktop/CS_260/my_start_up/wjw37.pem -h pdfsimplifer.click -s startup
