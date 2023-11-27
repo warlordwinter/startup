@@ -38,7 +38,7 @@ app.post('/signup', (req, res) => {
   if (req.body.username === undefined || req.body.password === undefined) {
     res.status(400).end()
   } else {
-    if (getUser(req.body.username)) {
+    if (getUser(req.body.username)==true) {
       console.log('This username is already being used')
       res.status(409).json({ error: 'Username already in use.' })
     } else {
