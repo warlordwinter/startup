@@ -107,4 +107,11 @@ For this deliverable I added backend endpoints that catch login and signup infor
 - **Stores data in MongoDB** - done!
 - **Retrieves Data in Mongos** - done! Make sure you spell the Filename correctly.
 
+## Login Deliverable
+- **User registration** - Creates a new account in the database.
+- **existing user** - Check's if the user is in the database and will alert you if there is already a user with the same username as you.
+- **Use MongoDB to store credentials** - Stores the PDF files that the user uploads
+- **Restricts functionality** - You cannot access the PDF database without logging in. If you leave the Upload Station HTML page you will be forced to log back in.
+
 $ ./deployFiles.sh -k ~/OneDrive/Desktop/CS_260/my_start_up/wjw37.pem -h pdfsimplifer.click -s startup
+
