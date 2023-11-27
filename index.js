@@ -34,17 +34,23 @@ app.post('/login', (req, res) => {
   }
 })
 
-app.post('/signup', (req, res) => {
-  if (req.body.username === undefined || req.body.password === undefined) {
-    res.status(400).end()
-  } else {
-    if (getUser(req.body.username)==true) {
-      console.log('This username is already being used')
-      res.status(409).json({ error: 'Username already in use.' })
+app.post('/signup', async (req, res) => {
+  try {
+    if (req.body.username === undefined || req.body.password === undefined) {
+      res.status(400).end()
     } else {
-      addUser(req.body.username, req.body.password)
-      res.status(201).json({ message: 'User registered successfully.' })
+      const existingUser = await getUser(req.body.username)
+      if (existingUser) {
+        console.log('This username is already being used')
+        res.status(409).json({ error: 'Username already in use.' })
+      } else {
+        await addUser(req.body.username, req.body.password)
+        res.status(201).json({ message: 'User registered successfully.' })
+      }
     }
+  } catch (error) {
+    console.error('Error:', error)
+    res.status(500).json({ error: 'Internal server error' })
   }
 })
 

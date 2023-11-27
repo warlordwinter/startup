@@ -73,7 +73,7 @@ async function addUser(username, password) {
 async function getUser(username) {
   const result = await userCollection.findOne({ username: username })
   if (result) {
-    console.log('User is stored in Database')
+    console.log('User is already stored in Database')
     return true
   } else {
     console.log('Username is Unique')
