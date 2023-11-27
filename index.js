@@ -133,6 +133,7 @@ app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
+//Cookies Section
 
 const port = 4000
 app.listen(port, () => {
