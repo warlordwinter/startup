@@ -49,6 +49,7 @@ async function getPDF(fileName) {
       'fileName': fileName,
     })
     console.log('Result from MongoDB:', result)
+    console.log(fileName)
     return result
   } catch (error) {
     console.error('error getting the PDF', error)

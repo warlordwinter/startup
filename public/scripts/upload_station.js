@@ -3,11 +3,13 @@
 function storePDF() {
   const pdfInput = document.getElementById('pdf-file-input');
   const file = pdfInput.files[0];
+  const username = localStorage.getItem('username');
 
   if (file) {
     const formData = new FormData();
     formData.append('pdf', file);
-    formData.append('filename', file.name); // Add the filename to the form data
+    formData.append('filename', file.name);
+    formData.append('username',username) // Add the filename to the form data
 
     fetch('/upload-pdf', {
       method: 'POST',
@@ -61,6 +63,7 @@ function getPDF() {
       console.log('PDF retrieved successfully');
     })
     .catch(error => {
+      alert('PDF not found. Please try again. Make sure to include the file extension (e.g. .pdf)');
       console.error('Error retrieving PDF:', error);
       // Handle the error, display an error message, or log it.
     });

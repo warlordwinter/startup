@@ -113,5 +113,5 @@ For this deliverable I added backend endpoints that catch login and signup infor
 - **Use MongoDB to store credentials** - Stores the PDF files that the user uploads
 - **Restricts functionality** - You cannot access the PDF database without logging in. If you leave the Upload Station HTML page you will be forced to log back in.
 
-$ ./deployFiles.sh -k ~/OneDrive/Desktop/CS_260/my_start_up/wjw37.pem -h pdfsimplifer.click -s startup
+$ ./deployService.sh -k wjw37.pem -h pdfsimplifer.click -s startup
 

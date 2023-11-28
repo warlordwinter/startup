@@ -92,8 +92,9 @@ app.post('/upload-pdf', upload.single('pdf'), async (req, res) => {
   try {
     console.log('uploading pdf:', req.file)
     const fileData = req.file.buffer
+    const username = req.body.username
     const filename = req.body.filename // Get the filename from the request body
-    const result = await addPDF('newuser', fileData, filename) // :)
+    const result = await addPDF(username, fileData, filename) // :)
 
     if (result.insertedId) {
       console.log(`PDF stored in MongoDB with _id: ${result.insertedId}`)
