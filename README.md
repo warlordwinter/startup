@@ -113,5 +113,15 @@ For this deliverable I added backend endpoints that catch login and signup infor
 - **Use MongoDB to store credentials** - Stores the PDF files that the user uploads
 - **Restricts functionality** - You cannot access the PDF database without logging in. If you leave the Upload Station HTML page you will be forced to log back in.
 
+## WebSocket deliverable
+
+For this deliverable I used webSocket have a live chat option so people could talk about documents over the web.
+
+- **Backend listens for WebSocket connection** - Not Yet.
+- **Frontend makes WebSocket connection** - Not Yet.
+- **Data sent over WebSocket connection** - Not Yet
+- **WebSocket data displayed** - The user is able to chat with others over the chat.
+
+
 $ ./deployService.sh -k wjw37.pem -h pdfsimplifer.click -s startup
 
