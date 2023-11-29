@@ -457,3 +457,12 @@ Cookies are HTTP request header. It's essentially a traveling dictionary cookies
 allCookies = document.cookie;
 ```
 Cookies are great for authentication processes!
+
+## Websocket
+*Websocket is a way for users to speak in real time with another user. Plus, it allows you to send data in realtime as well.*
+
+## React
+So basically we are converting our website to become more dynamic and quicker. We can do this by using make `JSX`. 
+`JSX` is basically a dynamic HTML code stored in a javascript file.
+This great for when you want you body tag on your website to change but you want to keep your header and footer tag the same.
+
