@@ -117,9 +117,9 @@ For this deliverable I added backend endpoints that catch login and signup infor
 
 For this deliverable I used webSocket have a live chat option so people could talk about documents over the web.
 
-- **Backend listens for WebSocket connection** - Not Yet.
-- **Frontend makes WebSocket connection** - Not Yet.
-- **Data sent over WebSocket connection** - Not Yet
+- **Backend listens for WebSocket connection** - Done!
+- **Frontend makes WebSocket connection** - Completed!
+- **Data sent over WebSocket connection** - Works!
 - **WebSocket data displayed** - The user is able to chat with others over the chat.
 
 
