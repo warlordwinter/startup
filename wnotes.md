@@ -466,3 +466,23 @@ So basically we are converting our website to become more dynamic and quicker. W
 `JSX` is basically a dynamic HTML code stored in a javascript file.
 This great for when you want you body tag on your website to change but you want to keep your header and footer tag the same.
 
+# Web Frameworks
+Web frameworks seek to make the job of writing web applications easier by providing tools for completing common application tasks.
+One way this is done is through hybrid file formats such as JSX or SFC files which combine HTML and JS files.
+
+### React Tutorial
+
+## Rendering
+Elements are the smallest building block of a React page. Often time the body tag our our program is populated by using the <div id="root"> </div>. 
+The Render function will display the data for the user.
+
+## Components
+Components let you split the UI into independent, reusable pieces, and address each piece in isolation.
+
+## Events
+Handling events in React is very similar to handling events in JS except we use camelCase instead.
+
+## More On Components
+The primary purpose of a `component` is to generate the user interface. What ever is returned from the render function is inserted into the HTML element.
+
+
