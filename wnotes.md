@@ -505,3 +505,26 @@ Basically, the main is the syringe, the app is the formula, and the index is the
 Library provides a tool for a specific functionality whereas
 Frameworks provide a set of tools and guidlines for building apps
 React is a library and is great for building a UI. Furthermore, it is platform agnostic and can be partnered with other libraries and frameworks.
+
+# Fragments in React
+Fragments are a way to group multiple child elements in without introducing more praent elements into the DOM
+
+They are very useful for avoiding unnecessary HTMl elements or when dealing with layout concerns
+```jsx
+import React from 'react';
+
+const MyComponent = () => {
+  return (
+    <> // This is the opening fragment
+      <h1>Hello</h1>
+      <p>This is a paragraph.</p>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+    </> // This is the closing fragment
+  );
+};
+
+export default MyComponent;
+```
