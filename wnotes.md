@@ -485,4 +485,23 @@ Handling events in React is very similar to handling events in JS except we use 
 ## More On Components
 The primary purpose of a `component` is to generate the user interface. What ever is returned from the render function is inserted into the HTML element.
 
+# VITE
 
+Vite Build Tool:
+- Purpose: Helps developers build websites or web apps more quickly and efficiently.
+- Key Features: Fast development server, quick startup times, and features like hot module replacement for faster coding.
+- Usage: Often used with the Vue.js framework but can also work with other frameworks like React or Svelte.
+
+Vite.js Framework:
+- Purpose: Provides a structure for building web applications.
+- Key Features: Lightweight and designed to work well with Vue.js, but can be extended to support other JavaScript frameworks.
+- Usage: Developers use Vite.js to organize and build the code of their web applications.
+
+What is the relationship between index.html, Main.jsx, and App.jsx?
+Index provides the structure for the web page. The main.jsx tells the code to go to App.jsx to get the html, javascript, and css to load the code. The app.jsx holds the code for html, javascript, and css to be injected. 
+Basically, the main is the syringe, the app is the formula, and the index is the patient's arm.
+
+# What is the difference between a library and a Framework?
+Library provides a tool for a specific functionality whereas
+Frameworks provide a set of tools and guidlines for building apps
+React is a library and is great for building a UI. Furthermore, it is platform agnostic and can be partnered with other libraries and frameworks.
