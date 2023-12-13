@@ -529,30 +529,49 @@ const MyComponent = () => {
 export default MyComponent;
 ```
 
-Final Study Guide
+# Final Study Guide
 
 1. What ports are used for HTTP, HTTPS, SSH?
+http typically use port 80
+https typically use port 443
+SSH (Secure Shell) typically uses port 22.
+
 2. What do HTTP status codes in the 300, 400, 500 range indicate?
+*300 range* indicates redirection (redirecting you to)
+*400 range* indicates client errors (bad requests)
+*500 range* indicates server error (internal server error)
+
 3. What does the HTTP header content-type allows you to do?
+The `Content-Type` header in an HTTP request or response specifies the media type of the resource. It tells the recipient what the data type of the content is and how to properly parse it. For example, it can indicate that the content is in HTML `(text/html)`, JSON `(application/json)`, or XML `(application/xml)`. *Allows you to emphzise the content type*
+
 4. What do the following attributes of a cookie do?
-- Domain
-- Path
-- SameSite
-- HTTPOnly
-5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET  request with a URL path of /foo/bar?
-6. Given the following Express service code: What does the following JavaScript fetch return?
+- Domain - Specifies the domain to which the cookie belongs and to which it should be sent. If the domain attribute is not specified, the cookie is valid for the domain that issued the request. *where the cookies come from*
+- Path - Path: Specifies the subset of URLs to which the cookie is sent. If a cookie is set with a specific path, it will only be sent to requests made to that path or subdirectories. *The cookie is generated here. We only care about the foo part.*
+- SameSite - This attribute is used to control whether a cookie should be restricted to a first-party or same-site context. It helps mitigate the risk of cross-site request forgery attacks. Possible values are "Strict," "Lax," or "None." "Strict" means the cookie is only sent in a first-party context, "Lax" is a more relaxed mode, and "None" means the cookie can be sent in cross-site requests. *only returns cookies to the samesites. Meaning only google websites can use google cookies*
+- HTTPOnly  When set, the cookie is not accessible through JavaScript, enhancing security by mitigating the risk of cross-site scripting (XSS) attacks. *not allow JS to run on the browser so it can read the browser*
+
+
+5. Assuming the following Express middleware, what would be the console.log output for an HTTP GET  request with a URL path of /foo/bar? *look the console logs and see what order the functions are called.*
+
+6. Given the following Express service code: What does the following JavaScript fetch return? *fetch returns status code or response objects (GET,POST,ETC). Also Promises can be returned too* if you see app.use that is an express service code.
 
 7. Given the following MongoDB query
 ```javascript
 { cost: { $gt: 10 }, name: /fran.*/}
 ```
 Select all the mathcing documents
+This code seems to be grabbing any values that are greater than 10 and that has the name that starts with "fran."
 
 8. How should you store user passwords in a database?
+Hashed and Salted
 
-9. Assuming the following Node.js service code is executing with websockets, what will be logged to  the console of the web browser?
+9. Assuming the following Node.js service code is executing with websockets, what will be logged to  the console of the web browser? *study what happens on connect, disconnect, and message*
+
 10. What is the WebSocket protocol used for?
-11. What is JSX and how are the curly braces rendered?
+
+11. What is JSX and how are the curly braces rendered? Javascript and HMTL together.
+anything after the return is rendered to the screen. {} are used for Js.
+
 12. Assuming a HTML document with a element, 
 ```HTML
 <div id="root"></div>
@@ -586,11 +605,13 @@ What will the React component do?
       const listItems = numbers.map((number) =>
         <li>{number}</li>
       );
-      return(<ul>{listItems}</ul>)
+      return(<ul>{listItems}</ul>) //ul means unordered list which generates bullet points whereas 
+      //ol generates 1),2),3), so on so forth
     }
     const root = ReactDOM.createRoot(document.getElementById('root')); 
     root.render(<Numbers/>);
 ```
+
 14. What does the following React component do?
 ```javascript
 function Example() {
@@ -607,8 +628,14 @@ function Example() {
 }
 ```
 
-15. What are React Hooks used for?
+15. What are React Hooks used for? 
+Hooks are used to modify the state of a component. They handle the state. 
+They also handle the lifeclyce of events.
+
 16. What is the useEffect hook used for?
+This is used to watch the lifecycle component. If I click a button it will rerun the program.
+Basically anytime something is changed(vars,code,etc) the useEffect will update the render. 
+
 17. What does this code do?
 ```javascript
 export default function App() {
@@ -626,8 +653,44 @@ export default function App() {
   );
 }
 ```
+This code creates the routers and allows you to navigate through the different JSX files. This is rendering different components based on what is searched for.
+
+```jsx
+export default function App() {
+  return (
+    // Set up the BrowserRouter for navigation
+    <BrowserRouter>
+      {/* Define the routes using the Routes component */}
+      <Routes>
+        {/* Define a route for the root path */}
+        <Route path="/" element={<Layout />}>
+          {/* Specify the default route for the root path */}
+          <Route index element={<Home />} />
+          
+          {/* Define a route for the "blogs" path */}
+          <Route path="blogs" element={<Blogs />} />
+          
+          {/* Define a route for the "contact" path */}
+          <Route path="contact" element={<Contact />} />
+          
+          {/* Define a catch-all route for any other path */}
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+```
+
 18. What role does npm play in web development?
+It manages your node packages.
 19. What does package.json do in a npm project?
+It lists all the packages you have. When you deploy your scripts it allows you to do that. It also provides you a place to place infomation about your project.
+
 20. What does the fetch function do?
+
 21. What does node.js do?
+Runs your server.
+
 22. What does Vite do?
+Vite allows you to bundle all your code together so that it can be deployed to a server. It also transposes your jsx code to normal javascript.
